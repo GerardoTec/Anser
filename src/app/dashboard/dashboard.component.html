@@ -1,0 +1,236 @@
+<body>
+  <div class="container">
+<div class="row">
+  <div class="col">
+    <small class="detail">Contract detail</small>
+    <h1 class="color__titulo">Contractual Control</h1>
+  </div>
+</div>
+    <div class="row" *ngFor=" let informacion of infoContrato">
+      <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="row justify-content-start mb-2">
+            <div class="col-4 text-center">
+              <h6 class="color__h6">Codigo Contrato</h6>
+              <small class="color__codigo">{{informacion.code}} </small>
+            </div>
+            <div class="col-6 izquierda">
+              <h6 class="color__h6 ">Nombre Contrato</h6>
+              <small  class="color__small ">{{informacion.name}}</small>
+            </div>
+          </div>
+
+          <div class="row justify-content-between izquierda ">
+            <div class="col-4 text-center">
+              <h6 class="color__h6 ">Especialidad</h6>
+              <small  class="color__small" >{{informacion.category}} </small>
+            </div>
+            <div class="col-6 ">
+              <h6 class="color__h6 ">Contratista</h6>
+              <small  class="color__small " >{{informacion.contractor}}</small>
+            </div>
+
+            <div class="col-2 text-center">
+              <h6 class="color__h6">Evidencia</h6>
+              <small  class="color__small" >
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-info" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#46A4B1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                  <path d="M11 14h1v4h1" />
+                  <path d="M12 11h.01" />
+                </svg>
+              </small>
+            </div>
+          </div>
+
+          <div class="row justify-content-betwee izquierda mb-2">
+            <div class="col-4 text-center">
+              <h6 class="color__h6">Fecha de Inicio</h6>
+              <small  class="color__small" >{{informacion.start_date}} </small>
+            </div>
+            <div class="col-4">
+              <h6 class="color__h6 izquierda">Fecha Terminacion</h6>
+              <small class="color__small text-center" >{{informacion.end_date}} </small>
+            </div>
+            <div class="col-4 ">
+              <h6 class="color__h6 izquierda">Duracion</h6>
+              <small class="color__small text-center" >{{duracion}} </small>
+            </div>
+ 
+          </div>
+
+        </div>
+      </div>
+    </div>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+           
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__codigo--precio">Total(MXN)</h6>
+              </div>
+              <div class="col-5 ">
+                <small class="color__codigo">{{ informacion.total_amount |currency:"MXN" }}</small>
+              </div> 
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__h6">IVA(16%)</h6>
+              </div>
+              <div class="col-5 ">
+                <small class="color__h6">{{iva |currency:"MXN"}} </small>
+              </div> 
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__h6">Contratado sin iva</h6>
+              </div>
+              <div class="col-5 ">
+                <small  class="color__h6">{{ contratoSinIva |currency:"MXN" }}</small>
+              </div> 
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__h6">Contratado con iva</h6>
+              </div>
+              <div class="col-5 ">
+                <small  class="color__h6"> {{informacion.total_amount |currency:"MXN"}} </small>
+              </div> 
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__h6">Anticipo(30%)</h6>
+              </div>
+              <div class="col-5 ">
+                <small  class="color__h6">{{anticipo |currency:"MXN"}} </small>
+              </div> 
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-7 ">
+                <h6 class="color__h6">Fondo de garantia(5%)</h6>
+              </div>
+              <div class="col-5 ">
+                <small  class="color__h6">{{fondoGarantia |currency:"MXN"}} </small>
+              </div> 
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-12">
+        <div class="card card3">
+          <div class="card-body">
+
+          <div class=""row>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card text-center centro" style="width: 18rem;">
+                  <div class="card-body">
+                   PROGRESO A FECHA 
+                   <p class="progreso"> {{porcentaje  | number: '1.0-0' }}%</p>
+                    <div class="pt-2">
+                      <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style  aria-valuemin="0" aria-valuemax="100">{{porcentaje  | number: '1.0-0' }}% </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+            <div class="row">
+              <div class="col-12">
+                <table class="table mt-2 table-sm">
+                  <thead class="tabla1 text-center">
+                    <tr>
+                      <th class="color__th">Total Contratado</th>
+                      <th class="color__th">Estimado a la fecha</th>
+                      <th class="color__th">Pendiente de estimar</th>
+                      <th class="color__th">Anticipo por omortizar</th>
+                      <th class="color__th">Fondo garantia retenido</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-center">
+                    <tr>
+                      <td class="color__td">{{contratoTotal | currency:"MXN":"MXN"}} </td>
+                      <td class="color__td">{{estimadoFecha |currency:"MXN":"MXN"}}</td>
+                      <td class="color__td">{{contratoTotal - estimadoFecha |currency:"MXN":"MXN"}} </td>
+                      <td class="color__td">{{anticipo - sumaAnticipo | currency:"MXN":"MXN"}}</td>
+                      <td class="color__td">{{sumaFondo | currency:"MXN":"MXN"}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="row" >
+              <div class="col-5 p-0">
+                <table class="table table-sm mt-2">
+                  <thead class="tabla1 text-center">
+                    <tr>
+                      <th class="color__inferior">#</th>
+                      <th class="color__inferior">Fecha Aprobación</th>
+                      <th class="color__inferior">Concepto</th>
+                      <th class="color__inferior">Aprobado por</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-center">
+                    <tr *ngFor="let datos of resgGeneral; let i=index;">
+                      <td class="color__inferior--td">{{i + 1}} </td>
+                      <td class="color__inferior--td">{{datos.reviewDate | date :'shortDate'}}</td>
+                      <td class="color__inferior--td">{{datos.name}} </td>
+                      <td class="color__inferior--td">{{ datos.reviewed_by}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-7 p-0">
+                <div class="tablasumatorias">
+                  <table class="table table-sm mt-2 resp">
+                    <thead class="text-center tabla1 cabeceratablasumatoria">
+                    <tr >
+                      <th class="cabeceratablasumatoria  color__inferior">Estimación</th>
+                      <th  class="cabeceratablasumatoria  color__inferior">Anticipo</th>
+                      <th  class="cabeceratablasumatoria  color__inferior">Fondo garantia</th>
+                      <th class="cabeceratablasumatoria  color__inferior">Sub-total</th>
+                      <th  class="cabeceratablasumatoria  color__inferior">Iva</th>
+                      <th  class="cabeceratablasumatoria color__inferior">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    <tr *ngFor="let respuesta of resgGeneralFiltrados">
+                      <td class="color__inferior--td">{{respuesta.estimate |currency:"MXN"}} </td>
+                      <td class="color__inferior--td">{{respuesta.down_payment |currency:"MXN"}} </td>
+                      <td class="color__inferior--td">{{respuesta.guarantee_fund |currency:"MXN"}} </td>
+                      <td class="color__inferior--td">{{ respuesta.subTotal |currency:"MXN" }}</td>
+                      <td class="color__inferior--td">{{ respuesta.iva |currency:"MXN" }}</td>
+                      <td class="color__inferior--td">{{respuesta.total |currency:"MXN"}}</td>
+                    </tr>
+                    </tbody>
+                    <thead class="text-center position-sticky">
+                      <tr class="cabeceratablasumatoria  color__inferior">
+                        <th class="cabeceratablasumatoria color__inferior">{{estimadoFecha |currency}} </th>
+                        <th class="cabeceratablasumatoria color__inferior">{{sumaAnticipo | currency}} </th>
+                        <th class="cabeceratablasumatoria color__inferior">{{sumaFondo | currency}} </th>
+                        <th class="cabeceratablasumatoria color__inferior">{{sumaSubtotal |currency}} </th>
+                        <th class="cabeceratablasumatoria color__inferior">{{sumaIva | currency}} </th>
+                        <th class="cabeceratablasumatoria color__inferior">{{sumaTotal | currency}} </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>

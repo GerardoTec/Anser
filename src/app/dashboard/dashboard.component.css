@@ -1,0 +1,100 @@
+.card{
+  border-radius: 20px;
+}
+.centro{
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+}
+
+h6{
+  margin-bottom: 0rem !important;
+  font-size: 11px !important;
+  font-family: SF UI Display;
+  font-weight:normal;
+}
+small{
+  text-align: left;
+}
+p{
+  margin-bottom: 0 !important;
+}
+.card3{
+  min-height: 75vh;
+}
+
+.resp{
+  max-height: 10vh;
+  overflow:auto;
+  overflow-x:hidden;
+}
+
+.tablasumatorias{
+  overflow-y: auto; height: 35vh;
+}
+.cabeceratablasumatoria{
+  position: sticky; top: 0;
+}
+.color__titulo{
+  color: #020F54;
+}
+.detail{
+  color: #2935A2;
+}
+.progreso{
+  color: #1FBD3A;
+}
+.color__h6{
+
+  color: #BFBFBF;
+}
+.color__small{
+  color: #838383;
+ 
+}
+.color__codigo{
+  color: #838383;
+  font-family: SF UI Display;
+  font-weight: bold;
+  
+}
+.color__codigo--precio{
+  color: #838383;
+  font-family: SF UI Display;
+  font-weight: 600;
+}
+.izquierda{
+
+  text-align: left;
+}
+.color__th{
+  color: #6A6A6A;
+  font-family: SF UI Display;
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+}
+.color__td{
+  color: #2A30A2;
+  font-family: SF UI Display;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+.color__inferior{
+  color: #6A6A6A;
+}
+.color__inferior--td{
+  color: #838383;
+}
+.scrollend{
+  overflow-x: auto; height: 35vh;
+}
+
+
+
+/*.tableFixHead          { overflow-y: auto; height: 100px; }
+.tableFixHead thead th { position: sticky; top: 0; }*/
+
+/*!* Just common table stuff. Really. *!
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }*/
